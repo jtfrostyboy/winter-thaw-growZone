@@ -8,6 +8,9 @@ import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
 import { getUser } from '../../utilities/users-service';
 import './App.css';
+import PlantRecommender from "../PlantRecommender/PlantRecommender";
+
+
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -16,11 +19,13 @@ export default function App() {
       <>
       <NavBar user={user} setUser={setUser}/>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<UserPage />} />
         <Route path="/user/:id/rec" element={<RecPage />} />
-        <Route path="/plant/:plantId" element={<RecPage />} />
+        {/* <Route path="/plant/:plantId" element={<RecPage />} /> */}
         <Route path="/auth" element={<AuthPage setUser={setUser}/>} />
+        <Route path="/plant/:plantId" element={<PlantRecommender />} /> {/* New Route for Plant Recommender */}
+
       </Routes>
       </>
     </main>
