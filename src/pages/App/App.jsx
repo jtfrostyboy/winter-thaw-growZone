@@ -6,6 +6,9 @@ import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from '../../utilities/users-service';
 import './App.css';
+import PlantRecommender from "../PlantRecommender/PlantRecommender";
+
+
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -17,6 +20,8 @@ export default function App() {
       <Routes>
         <Route path="/orders/new" element={<NewOrderPage />} />
         <Route path="/orders" element={<OrderHistoryPage />} />
+        <Route path="/plant-recommender" element={<PlantRecommender />} /> {/* New Route for Plant Recommender */}
+
       </Routes>
       </>
       :
